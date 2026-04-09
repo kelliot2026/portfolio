@@ -88,7 +88,7 @@ h1, h2, h3 { color: #111; text-align: center; }
   text-align: center;
 
   /* Gradient background matching Navbar colors */
-  background: linear-gradient(135deg,#a8e063, #84cbd9);
+  background: linear-gradient(135deg,#98f321, #e48080);
   color: #fff;
 
   /* Optional subtle animation */

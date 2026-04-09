@@ -80,7 +80,7 @@ h1, h2, h3 { color: #111; text-align: center; }
 }
 
 .hero {
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,7 +88,8 @@ h1, h2, h3 { color: #111; text-align: center; }
   text-align: center;
 
   /* Gradient background matching Navbar colors */
-  background: linear-gradient(135deg,#98f321, #e48080);
+  /* background: linear-gradient(135deg,#98f321, #82e0f7); */
+  background: white;
   color: #fff;
 
   /* Optional subtle animation */
@@ -103,10 +104,50 @@ h1, h2, h3 { color: #111; text-align: center; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
+.myphoto{
+  width: 300px;
+  height: 400px;
+}
 .hero h1 {
   font-size: 3rem;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+/* Position the title */
+/* Base title style */
+/* Base title style */
+.hero-title {
+  font-size: 4rem;
+  font-weight: 900;
+  text-align: center;
+
+  /* Gradient text */
+  background: linear-gradient(270deg, #6a11cb, #2575fc, #f9a8d4);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Continuous floating animation */
+  animation: float 3s ease-in-out infinite alternate, shine 5s linear infinite;
+}
+
+/* Subtle up-and-down floating */
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.02); /* slight move up and tiny scale */
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Gradient shine across text */
+@keyframes shine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .hero p {
@@ -133,15 +174,103 @@ h1, h2, h3 { color: #111; text-align: center; }
 
 /* About */
 .about { max-width: 800px; margin: auto; text-align: center; }
+.about-title{color:#00c6ff; margin-bottom: 20px;}
 .about img { width: 150px; border-radius: 50%; margin-bottom: 20px; }
 .about p{ max-width: 800px; margin: auto; text-align:justify; font-size: 24px;}
 
-/* Skills */
-.skills { max-width: 800px; margin: auto; }
-.skill { margin-bottom: 60px; }
-.skill span { display: block; font-weight: 600; margin-bottom: 20px; }
-.skill-bar { width: 100%; background: #ddd; border-radius: 10px; overflow: hidden; }
-.skill-level { height: 15px; background: #4CAF50; width: 0; transition: width 1.5s ease-in-out; }
+/* Skills.css */
+
+/* Section container */
+#skills {
+  padding: 60px 30px;
+  background: linear-gradient(120deg, #fef9f9, #f0f0ff);
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#skills h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 50px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Flex container for skill groups */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap; /* Wrap groups if screen is small */
+  justify-content: center; /* Center groups horizontally */
+  gap: 30px; /* Space between groups */
+}
+
+/* Individual skill group card */
+.skill-group {
+  background-color: white;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 30%; /* Flexible width, approx 3 per row */
+  min-width: 28%; /* Prevent too small on mobile */
+  max-width: 280px; /* Control width */
+}
+
+.skill-group:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Skill group title */
+.skill-group h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #6a11cb;
+}
+
+/* Container for skill badges */
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Individual skill badge */
+.skill-badge {
+  background: linear-gradient(90deg, #fad0c4, #ffd1ff);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #6a11cb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-badge:hover {
+  transform: scale(1.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .skill-group {
+    flex: 0 0 45%; /* 2 per row on medium screens */
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 640px) {
+  .skill-group {
+    flex: 0 0 90%; /* 1 per row on small screens */
+    max-width: 90%;
+  }
+}
 
 /* Projects */
 .projects {
@@ -152,7 +281,7 @@ h1, h2, h3 { color: #111; text-align: center; }
   margin: 40px auto;
   padding: 0 20px;
 }
-
+.project-title{color:#00c6ff; margin-bottom: 20px; font-size: 32px;}
 .project-card {
   background: #fff;
   padding: 20px;
@@ -165,12 +294,53 @@ h1, h2, h3 { color: #111; text-align: center; }
   transform: translateY(-5px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
+.project-card h3{
+  color: #00c6ff;
+}
 
 /* Contact Form */
 #contact { text-align: center; max-width: 600px; margin: auto; }
+.contact-section{
+  padding-top: 10vh;
+}
+.contact-title {
+  font-size: 4rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 50px;
+
+  /* Blue → Green gradient */
+  background: linear-gradient(270deg, #00c6ff, #0072ff, #00ffb3, #00c6ff);
+  background-size: 400% 400%;
+
+  /* Make text show gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Smooth gradient animation */
+  animation: gradientMove 6s ease infinite;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.contact-socials{
+  margin-top: 5vh;
+  font-size: 18px;
+}
 form { display: flex; flex-direction: column; gap: 15px; }
 input, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
-button { padding: 10px; border: none; border-radius: 5px; background: #4CAF50; color: #fff; cursor: pointer; transition: 0.3s; }
+button { padding: 10px; border: none; border-radius: 15px; background: #4CAF50;
+  font-size: 16px; color: #fff; cursor: pointer; transition: 0.3s; }
 button:hover { background: #45a049; }
 
 /* Footer */

@@ -1,0 +1,15 @@
+  .link{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor:pointer;
+  }
+  .link:hover {
+    background-color: #e940ff;
+    color: #fff;   
+    cursor:pointer;
+  }

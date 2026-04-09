@@ -1,7 +1,7 @@
 function About() {
   return (
     <section id="about" className="about">
-      <h1>About Me</h1>
+      <h1 className="about-title">About Me</h1>
       <p>Passionate and creative Full Stack Web Developer with over 10 years of experience architecting and delivering
 scalable, high-performance applications across web, cloud, and enterprise platforms. Known for combining
 innovation with meticulous attention to detail, delivering modern front-end experiences using React, Angular,

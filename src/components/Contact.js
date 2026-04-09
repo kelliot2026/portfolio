@@ -3,9 +3,7 @@ import React from "react";
 function Contact() {
   return (
     <section id="contact" className="contact-section">
-      <h2>Contact Me</h2>
-      <p>Feel free to reach out via the form below:</p>
-
+      <h2 className="contact-title">Contact Me</h2>
       <form
         action="mailto:yourname@example.com"
         method="post"
@@ -36,6 +34,9 @@ function Contact() {
       <p className="contact-socials">
         Or connect via{" "}
         <a href="#">LinkedIn</a> | <a href="#">GitHub</a>
+      </p>
+      <p className="contact-socials">
+        
       </p>
     </section>
   );
